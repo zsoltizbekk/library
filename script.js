@@ -103,13 +103,25 @@ function addLibrary() {
     
 }
 
-function Book(title, author, page, read) { //constructor
-    this.title = title;
-    this.author = author;
-    this.page = page;
-    this.read = read;
-    this.info = function(){
-        return title + " " + author;
+// function Book(title, author, page, read) { //constructor
+//     this.title = title;
+//     this.author = author;
+//     this.page = page;
+//     this.read = read;
+//     this.info = function(){
+//         return title + " " + author;
+//     }
+// }
+
+class Book{ //class
+    constructor(title, author, page, read){
+        this.title = title;
+        this.author = author;
+        this.page = page;
+        this.read = read;
+    }
+    read = function(){
+        return this.title + " " + this.author;
     }
 }
 
@@ -120,10 +132,7 @@ const addButton = document.querySelector(".addDiv");
 
 addButton.addEventListener("click", function(){
     num++;
-    
-    
     if (num==myLibrary.length){
         addLibrary();
     } else {num--;}
-    
 });
